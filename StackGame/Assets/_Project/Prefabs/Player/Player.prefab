@@ -206,6 +206,7 @@ MonoBehaviour:
   _forwardItemSocket: {fileID: 7076234809953177729}
   _forwardItemType: 0
   _backwardItemSocket: {fileID: 5061044925996676757}
+  _backwardItemType: 0
 --- !u!1001 &5735865557690155207
 PrefabInstance:
   m_ObjectHideFlags: 0

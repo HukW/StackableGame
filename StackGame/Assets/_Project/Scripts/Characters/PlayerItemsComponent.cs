@@ -32,6 +32,8 @@ namespace _Project.Scripts.Characters
         private ItemTypes _forwardItemType;
         [SerializeField]
         private Transform _backwardItemSocket;
+        [SerializeField]
+        private ItemTypes _backwardItemType;
 
 
         private void Start()
@@ -86,14 +88,38 @@ namespace _Project.Scripts.Characters
             item.transform.localPosition = new Vector3(0, _nextItemYOffset * (itemQueue.Count - 1), 0);
         }
 
-        private void TryDeliverItem(ItemTypes itemType)
+        public bool TryDeliverItem(ItemTypes itemType)
         {
-            if (itemType == _forwardItemType)
-            {
+            if (itemType == _forwardItemType && _forwardItems.Count > 0)
+            {   
+                GameObject item = _forwardItems.Dequeue();
+                Destroy(item);
+                RecalculateItemsPosition(_forwardItems);
+                
                 if (_forwardItems.Count <= 0)
                 {
                     _animator.SetBool(_MaskAnimationPropertyRef, false);
                 }
+                return true;
+            }
+            if (itemType == _backwardItemType && _forwardItems.Count > 0)
+            {   
+                GameObject item = _backwardItems.Dequeue();
+                Destroy(item);
+                RecalculateItemsPosition(_backwardItems);
+                
+                return true;
+            }
+
+            return false;
+        }
+
+        private void RecalculateItemsPosition(Queue<GameObject> itemQueue)
+        {
+            GameObject[] queueArray = itemQueue.ToArray();
+            for (int i = 0; i < itemQueue.Count; i++)
+            {
+                queueArray[i].transform.localPosition = new Vector3(0, _nextItemYOffset * i, 0);
             }
         }
     }
