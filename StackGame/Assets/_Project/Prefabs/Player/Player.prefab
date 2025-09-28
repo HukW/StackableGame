@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 6901573474931559608}
-  _characterSpeed: 3
-  _rotationSpeed: 50
+  _characterSpeed: 5
+  _rotationSpeed: 150
 --- !u!114 &3031881256129432169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   _forwardItemSocket: {fileID: 7076234809953177729}
   _forwardItemType: 0
   _backwardItemSocket: {fileID: 5061044925996676757}
-  _backwardItemType: 0
+  _backwardItemType: 1
 --- !u!1001 &5735865557690155207
 PrefabInstance:
   m_ObjectHideFlags: 0

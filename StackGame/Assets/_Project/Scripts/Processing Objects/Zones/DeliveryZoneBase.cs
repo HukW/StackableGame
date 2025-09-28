@@ -10,6 +10,7 @@ namespace _Project.Scripts.Processing_Objects.Zones
     {
         public Action<ItemTypes> OnItemDelivered;
 
+        [SerializeField]
         private ItemTypes _itemType;
         private PlayerItemsComponent _playerItemsComponent;
         

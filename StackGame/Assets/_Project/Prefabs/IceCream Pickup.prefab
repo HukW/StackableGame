@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61361873f3e93ac41ac37b4a8287e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 5961158846553667170}
+  _rigidbody: {fileID: 8471396455575500116}
   _pickupType: 1
 --- !u!1001 &2839407931811440227
 PrefabInstance:

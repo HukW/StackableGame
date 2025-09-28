@@ -102,7 +102,7 @@ namespace _Project.Scripts.Characters
                 }
                 return true;
             }
-            if (itemType == _backwardItemType && _forwardItems.Count > 0)
+            if (itemType == _backwardItemType && _backwardItems.Count > 0)
             {   
                 GameObject item = _backwardItems.Dequeue();
                 Destroy(item);
@@ -121,6 +121,34 @@ namespace _Project.Scripts.Characters
             {
                 queueArray[i].transform.localPosition = new Vector3(0, _nextItemYOffset * i, 0);
             }
+        }
+
+        public bool TryAddItem(GameObject prefab)
+        {
+            PickupComponent pickupComponent = prefab.GetComponent<PickupComponent>();
+            if (pickupComponent.PickupType == _forwardItemType)
+            {
+                if (_forwardItems.Count < _MaxItemsPerStack || _MaxItemsPerStack == 0)
+                {
+                    GameObject item = Instantiate(prefab);
+                    
+                    TryPickupItem(item);
+                    
+                    return true;
+                }
+            }
+            if (pickupComponent.PickupType == _backwardItemType)
+            {   
+                if (_backwardItems.Count < _MaxItemsPerStack || _MaxItemsPerStack == 0)
+                {
+                    GameObject item = Instantiate(prefab);
+                    
+                    TryPickupItem(item);
+                    
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

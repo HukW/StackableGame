@@ -12,12 +12,18 @@ namespace _Project.Scripts.Processing_Objects
         private ItemTypes _requiredItemType;
         [SerializeField]
         private ItemTypes _producedItemType;
+        [SerializeField]
+        private GameObject _producedItemPrefab;
+        public GameObject ProducedItemPrefab => _producedItemPrefab;
         
         [SerializeField]
         private List<DeliveryZoneBase> _deliveryZones = new List<DeliveryZoneBase>();
         [SerializeField]
         private List<LoadZoneBase> _loadZones = new List<LoadZoneBase>();
 
+        private int _producedItemsCount = 0;
+        public int ProducedItemsCount => _producedItemsCount;
+        
         private void Start()
         {
             foreach (DeliveryZoneBase deliveryZone in _deliveryZones)
@@ -29,17 +35,20 @@ namespace _Project.Scripts.Processing_Objects
             foreach (LoadZoneBase loadZone in _loadZones)
             {
                 loadZone.OnItemPickedUp += OnItemPickedUp;
+                loadZone.SetItemType(_producedItemType);
+                loadZone.SetItemPrefab(_producedItemPrefab);
+                loadZone.SetOwningProcessingObject(this);
             }
         }
 
         private void DeliverItem(ItemTypes itemType)
         {
-            
+            _producedItemsCount++;
         }
 
-        private void OnItemPickedUp(PickupComponent item)
+        private void OnItemPickedUp(ItemTypes itemType)
         {
-            
+            _producedItemsCount--;
         }
     }
 }
