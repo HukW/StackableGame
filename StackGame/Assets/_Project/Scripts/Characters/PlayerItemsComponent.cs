@@ -41,7 +41,6 @@ namespace _Project.Scripts.Characters
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.LogWarning(123);
             if (other.gameObject.CompareTag(ItemTag))
             {
                 TryPickupItem(other.gameObject);
