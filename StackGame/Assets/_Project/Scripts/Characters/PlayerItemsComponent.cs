@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Project.Scripts.Pickups;
 using UnityEngine;
@@ -12,8 +13,8 @@ namespace _Project.Scripts.Characters
         private const string MaskAnimationPropertyName = "ForwardMask";
         private int _MaskAnimationPropertyRef;
         
-        private Queue<GameObject> _forwardItems = new Queue<GameObject>();
-        private Queue<GameObject> _backwardItems = new Queue<GameObject>();
+        private Stack<GameObject> _forwardItems = new Stack<GameObject>();
+        private Stack<GameObject> _backwardItems = new Stack<GameObject>();
         
         [SerializeField]
         private Animator _animator;
@@ -59,7 +60,7 @@ namespace _Project.Scripts.Characters
             {
                 if (_forwardItems.Count < _MaxItemsPerStack)
                 {
-                    _forwardItems.Enqueue(item);
+                    _forwardItems.Push(item);
                     SetItemPositionAndParent(pickupComponent, _forwardItemSocket, _forwardItems);
                     
                     _animator.SetBool(_MaskAnimationPropertyRef, true);
@@ -71,7 +72,7 @@ namespace _Project.Scripts.Characters
             {
                 if (_forwardItems.Count < _MaxItemsPerStack)
                 {
-                    _backwardItems.Enqueue(item);
+                    _backwardItems.Push(item);
                     SetItemPositionAndParent(pickupComponent, _backwardItemSocket, _backwardItems);
                     
                     pickupComponent.PickUp();
@@ -79,22 +80,22 @@ namespace _Project.Scripts.Characters
             }
         }
 
-        private void SetItemPositionAndParent(PickupComponent item, Transform parent, Queue<GameObject> itemQueue)
+        private void SetItemPositionAndParent(PickupComponent item, Transform parent, Stack<GameObject> itemStack)
         {
             item.transform.rotation = Quaternion.identity;
             
             item.transform.SetParent(parent);
             
-            item.transform.localPosition = new Vector3(0, _nextItemYOffset * (itemQueue.Count - 1), 0);
+            item.transform.localPosition = new Vector3(0, _nextItemYOffset * (itemStack.Count - 1), 0);
         }
 
         public bool TryDeliverItem(ItemTypes itemType)
         {
             if (itemType == _forwardItemType && _forwardItems.Count > 0)
             {   
-                GameObject item = _forwardItems.Dequeue();
-                Destroy(item);
-                RecalculateItemsPosition(_forwardItems);
+                GameObject item = _forwardItems.Pop();
+                PickupComponent pickupComponent = item.GetComponent<PickupComponent>();
+                pickupComponent.Deliver();
                 
                 if (_forwardItems.Count <= 0)
                 {
@@ -104,23 +105,14 @@ namespace _Project.Scripts.Characters
             }
             if (itemType == _backwardItemType && _backwardItems.Count > 0)
             {   
-                GameObject item = _backwardItems.Dequeue();
-                Destroy(item);
-                RecalculateItemsPosition(_backwardItems);
+                GameObject item = _backwardItems.Pop();
+                PickupComponent pickupComponent = item.GetComponent<PickupComponent>();
+                pickupComponent.Deliver();
                 
                 return true;
             }
 
             return false;
-        }
-
-        private void RecalculateItemsPosition(Queue<GameObject> itemQueue)
-        {
-            GameObject[] queueArray = itemQueue.ToArray();
-            for (int i = 0; i < itemQueue.Count; i++)
-            {
-                queueArray[i].transform.localPosition = new Vector3(0, _nextItemYOffset * i, 0);
-            }
         }
 
         public bool TryAddItem(GameObject prefab)
