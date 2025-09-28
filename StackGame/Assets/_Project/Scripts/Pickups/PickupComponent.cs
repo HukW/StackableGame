@@ -10,8 +10,8 @@ namespace _Project.Scripts.Pickups
         private Rigidbody _rigidbody;
         
         [SerializeField]
-        private PickupsEnum _pickupType = PickupsEnum.None;
-        public PickupsEnum PickupType => _pickupType;
+        private ItemTypes _pickupType = ItemTypes.None;
+        public ItemTypes PickupType => _pickupType;
 
         private void Start()
         {

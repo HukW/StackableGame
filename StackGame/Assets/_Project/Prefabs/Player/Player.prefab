@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6195447c8970a40878e52d3bff6d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 6901573474931559608}
   _MaxItemsPerStack: 20
   _nextItemYOffset: 0.3
   _forwardItemSocket: {fileID: 7076234809953177729}

@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Project.Scripts.Pickups;
-using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 namespace _Project.Scripts.Characters
 {
@@ -11,8 +9,14 @@ namespace _Project.Scripts.Characters
     {
         private const string ItemTag = "Item";
         
+        private const string MaskAnimationPropertyName = "ForwardMask";
+        private int _MaskAnimationPropertyRef;
+        
         private Queue<GameObject> _forwardItems = new Queue<GameObject>();
         private Queue<GameObject> _backwardItems = new Queue<GameObject>();
+        
+        [SerializeField]
+        private Animator _animator;
 
         [SerializeField] 
         [Min(0)]
@@ -25,9 +29,15 @@ namespace _Project.Scripts.Characters
         [SerializeField] 
         private Transform _forwardItemSocket; 
         [SerializeField]
-        private PickupsEnum _forwardItemType;
+        private ItemTypes _forwardItemType;
         [SerializeField]
         private Transform _backwardItemSocket;
+
+
+        private void Start()
+        {
+            _MaskAnimationPropertyRef = Animator.StringToHash(MaskAnimationPropertyName);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -51,6 +61,8 @@ namespace _Project.Scripts.Characters
                     _forwardItems.Enqueue(item);
                     SetItemPositionAndParent(pickupComponent, _forwardItemSocket, _forwardItems);
                     
+                    _animator.SetBool(_MaskAnimationPropertyRef, true);
+                    
                     pickupComponent.PickUp();
                 }
             }
@@ -73,6 +85,17 @@ namespace _Project.Scripts.Characters
             item.transform.SetParent(parent);
             
             item.transform.localPosition = new Vector3(0, _nextItemYOffset * (itemQueue.Count - 1), 0);
+        }
+
+        private void TryDeliverItem(ItemTypes itemType)
+        {
+            if (itemType == _forwardItemType)
+            {
+                if (_forwardItems.Count <= 0)
+                {
+                    _animator.SetBool(_MaskAnimationPropertyRef, false);
+                }
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace _Project.Scripts.Pickups
 {
-    public enum PickupsEnum
+    public enum ItemTypes
     {
         None = -1,
         Milk,

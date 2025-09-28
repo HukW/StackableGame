@@ -7,7 +7,7 @@ namespace _Project.Scripts.Characters
     public class PlayerCharacterController : MonoBehaviour
     {
         private const string WalkingAnimationPropertyName = "Walking";
-        private int WalkingAnimationPropertyRef;
+        private int _walkingAnimationPropertyRef;
         
         private CharacterController _characterController;
         [SerializeField]
@@ -22,7 +22,7 @@ namespace _Project.Scripts.Characters
         {
             _characterController = GetComponent<CharacterController>();
             
-            WalkingAnimationPropertyRef = Animator.StringToHash(WalkingAnimationPropertyName);
+            _walkingAnimationPropertyRef = Animator.StringToHash(WalkingAnimationPropertyName);
         }
 
         private void FixedUpdate()
@@ -53,7 +53,7 @@ namespace _Project.Scripts.Characters
         private void HandleAnimation(float verticalMovement, float horizontalMovement)
         {
             bool isWalking = verticalMovement != 0;    
-            _animator.SetBool(WalkingAnimationPropertyRef, isWalking);
+            _animator.SetBool(_walkingAnimationPropertyRef, isWalking);
         } 
     }
 }
