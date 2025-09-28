@@ -9,17 +9,17 @@ namespace _Project.Scripts.Processing_Objects.Zones
     {
         public Action<ItemTypes> OnItemPickedUp;
         
-        private ItemTypes _itemType;
-        private PlayerItemsComponent _playerItemsComponent;
-        private GameObject _prefab;
-        private ProcessingObject _owningProcessingObject;
+        protected ItemTypes _itemType;
+        protected PlayerItemsComponent _playerItemsComponent;
+        protected GameObject _prefab;
+        protected ProcessingObject _owningProcessingObject;
         
         [SerializeField] 
         [Min(0)]
         private float _delayBetweenActions = .2f;
         private float _currentDelay = 0f;
 
-        private void Start()
+        protected virtual void Start()
         {
             _playerItemsComponent = FindObjectOfType<PlayerItemsComponent>();
         }
@@ -58,7 +58,7 @@ namespace _Project.Scripts.Processing_Objects.Zones
             _prefab = prefab;   
         }
 
-        public void SetOwningProcessingObject(ProcessingObject processingObject)
+        public virtual void SetOwningProcessingObject(ProcessingObject processingObject)
         {
             _owningProcessingObject = processingObject;
         }

@@ -39,13 +39,13 @@ namespace _Project.Scripts.Pickups
             StartCoroutine(DestroyRoutine());
         }
 
-        private void PlayAppearAnimation()
+        public void PlayAppearAnimation()
         {
             transform.localScale = Vector3.zero;
             transform.DOScale(1, AnimationDuration).SetEase(Ease.OutBounce);
         }
 
-        private void PlayDisappearAnimation()
+        public void PlayDisappearAnimation()
         {
             transform.localScale = Vector3.one;
             transform.DOScale(0, AnimationDuration).SetEase(Ease.OutCirc);

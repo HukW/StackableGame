@@ -8,6 +8,9 @@ namespace _Project.Scripts.Processing_Objects
 {
     public class ProcessingObject : MonoBehaviour
     {
+        public Action OnItemDelivered;
+        public Action OnItemPickedUp;
+        
         [SerializeField]
         private ItemTypes _requiredItemType;
         [SerializeField]
@@ -34,7 +37,7 @@ namespace _Project.Scripts.Processing_Objects
 
             foreach (LoadZoneBase loadZone in _loadZones)
             {
-                loadZone.OnItemPickedUp += OnItemPickedUp;
+                loadZone.OnItemPickedUp += ItemPickedUp;
                 loadZone.SetItemType(_producedItemType);
                 loadZone.SetItemPrefab(_producedItemPrefab);
                 loadZone.SetOwningProcessingObject(this);
@@ -44,11 +47,13 @@ namespace _Project.Scripts.Processing_Objects
         private void DeliverItem(ItemTypes itemType)
         {
             _producedItemsCount++;
+            OnItemDelivered?.Invoke();
         }
 
-        private void OnItemPickedUp(ItemTypes itemType)
+        private void ItemPickedUp(ItemTypes itemType)
         {
             _producedItemsCount--;
+            OnItemPickedUp?.Invoke();
         }
     }
 }
