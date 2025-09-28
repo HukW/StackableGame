@@ -46,15 +46,22 @@ namespace _Project.Scripts.Characters
         {
             if (other.gameObject.CompareTag(ItemTag))
             {
-                TryPickupItem(other.gameObject);
+                bool pickedUp = TryPickupItem(other.gameObject);
+                if (!pickedUp)
+                {
+                    PickupComponent pickupComponent = other.gameObject.GetComponent<PickupComponent>();
+                    if(!pickupComponent) return;
+                    
+                    pickupComponent.ApplyCollisionReaction(gameObject);
+                }
             }
         }
 
 
-        private void TryPickupItem(GameObject item)
+        private bool TryPickupItem(GameObject item)
         {
             PickupComponent pickupComponent = item.GetComponent<PickupComponent>();
-            if(!pickupComponent) return;
+            if(!pickupComponent) return false;
 
             if (pickupComponent.PickupType == _forwardItemType)
             {
@@ -66,6 +73,8 @@ namespace _Project.Scripts.Characters
                     _animator.SetBool(_MaskAnimationPropertyRef, true);
                     
                     pickupComponent.PickUp();
+                    
+                    return true;
                 }
             }
             else
@@ -76,17 +85,19 @@ namespace _Project.Scripts.Characters
                     SetItemPositionAndParent(pickupComponent, _backwardItemSocket, _backwardItems);
                     
                     pickupComponent.PickUp();
+                    
+                    return true;
                 }
             }
+            return false;
         }
 
         private void SetItemPositionAndParent(PickupComponent item, Transform parent, Stack<GameObject> itemStack)
         {
-            item.transform.rotation = Quaternion.identity;
-            
             item.transform.SetParent(parent);
             
             item.transform.localPosition = new Vector3(0, _nextItemYOffset * (itemStack.Count - 1), 0);
+            item.transform.localRotation = Quaternion.identity;
         }
 
         public bool TryDeliverItem(ItemTypes itemType)

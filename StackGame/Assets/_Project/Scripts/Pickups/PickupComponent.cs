@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Pickups
 {
@@ -20,6 +21,10 @@ namespace _Project.Scripts.Pickups
         [SerializeField]
         private float _animationDuration = 0.5f;
         public float AnimationDuration => _animationDuration;
+
+        [SerializeField] 
+        private float _pushForce = 2f;
+        
         
         public void PickUp()
         {
@@ -55,6 +60,17 @@ namespace _Project.Scripts.Pickups
         {
             yield return new WaitForSeconds(AnimationDuration);
             Destroy(gameObject);
+        }
+
+        public void ApplyCollisionReaction(GameObject reactionCauser)
+        {
+            ApplyPush(reactionCauser.transform);
+        }
+        private void ApplyPush(Transform otherTransform)
+        {
+            Vector3 pushDir = (transform.position - otherTransform.position).normalized;
+            pushDir.y = 0.2f;
+            _rigidbody.AddForce(pushDir * _pushForce, ForceMode.Impulse);
         }
     }
 }

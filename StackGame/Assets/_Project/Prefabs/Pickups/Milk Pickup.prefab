@@ -98,6 +98,8 @@ MonoBehaviour:
   _collider: {fileID: 7967794066842959420}
   _rigidbody: {fileID: 2117312124564711498}
   _pickupType: 0
+  _animationDuration: 0.5
+  _pushForce: 2
 --- !u!1001 &2795073363043929760
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemType: 0
-  _delayBetweenActions: 0.33
+  _delayBetweenActions: 0.2
 --- !u!1 &401528300912517720
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac2a36affd90514b9da761c12f7adb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayBetweenActions: 0.33
+  _delayBetweenActions: 0.2
   _itemsStartPoint: {fileID: 478466397480289184}
   _horizontalElements: 3
   _verticalElements: 4
