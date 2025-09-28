@@ -18,8 +18,6 @@ namespace _Project.Scripts.Characters
         [SerializeField]
         private float _rotationSpeed = 8f;
         
-        
-        
         private void Start()
         {
             _characterController = GetComponent<CharacterController>();

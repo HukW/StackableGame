@@ -781,7 +781,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &1664764850586762250
+--- !u!1001 &1568097494090011905
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -789,84 +789,169 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7008144187021038403, guid: 8258da0a340e0884a94db7f552414848, type: 3}
-      propertyPath: m_Name
-      value: Stickman Hero Yellow
-      objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.76
+      value: 18.877
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 1.099
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.54
+      value: 16.152
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7640988632562256377, guid: 8258da0a340e0884a94db7f552414848, type: 3}
+    - target: {fileID: 5529029950951623097, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695030283793016560, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
+      propertyPath: m_Name
+      value: IceCream Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7008144187021038403, guid: 8258da0a340e0884a94db7f552414848, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1664764850586762252}
-  m_SourcePrefab: {fileID: 100100000, guid: 8258da0a340e0884a94db7f552414848, type: 3}
---- !u!1 &1664764850586762251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7008144187021038403, guid: 8258da0a340e0884a94db7f552414848, type: 3}
-  m_PrefabInstance: {fileID: 1664764850586762250}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1664764850586762252
-Animator:
-  serializedVersion: 5
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48b2e0ef68a41c7439db5e81a77fc5a9, type: 3}
+--- !u!1001 &2234387608354870151
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664764850586762251}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0f86804aea6bb1e41a910e1365668a70, type: 3}
-  m_Controller: {fileID: 9100000, guid: 99a9788713128ea4b9016cfba77f8fd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518927728524872022, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828918338639629794, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f59315fdfa977d24fb7f7ea62e0afd16, type: 3}
+--- !u!1001 &3382570312372012603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.425
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729940756731874465, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412064367999629857, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
+      propertyPath: m_Name
+      value: Milk Pickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20fbe8f15050f294aa71e3fbe5518a42, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -874,4 +959,6 @@ SceneRoots:
   - {fileID: 184047098}
   - {fileID: 181810081}
   - {fileID: 1907409301}
-  - {fileID: 1664764850586762250}
+  - {fileID: 2234387608354870151}
+  - {fileID: 3382570312372012603}
+  - {fileID: 1568097494090011905}
