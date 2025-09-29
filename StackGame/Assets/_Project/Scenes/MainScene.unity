@@ -2829,6 +2829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textBlock: {fileID: 13224322}
+  _diamondImage: {fileID: 763220946}
   _coinsPerItem: 10
   _bindedDeliveryZones:
   - {fileID: 665933880}

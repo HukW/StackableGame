@@ -99,7 +99,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2117312124564711498}
   _pickupType: 0
   _animationDuration: 0.5
-  _pushForce: 2
+  _pushForce: 5
 --- !u!1001 &2795073363043929760
 PrefabInstance:
   m_ObjectHideFlags: 0
